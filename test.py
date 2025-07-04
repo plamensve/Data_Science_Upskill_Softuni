@@ -1,3 +1,14 @@
-lambda_test = lambda x: x + 1 if x % 2 == 0 else x + 2
+def convert_weight(w):
+    if "lbs" in w:
+        number = float(w.split(" ")[0])
+        converted_number = round(number * 0.453592, 2)
+        return f"{converted_number} kg"
+    elif "kg" in w:
+        number = float(w.split(" ")[0])
+        rounded_number = round(number, 2)
+        return f"{rounded_number} kg"
+    else:
+        return w
 
-print(lambda_test(3))
+
+print(convert_weight('24kg,lbs'))
